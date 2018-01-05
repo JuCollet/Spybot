@@ -3,33 +3,27 @@ var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var gpio = require('gpio');
+var Gpio = require('pigpio').Gpio,
+    lf = new Gpio(26, {mode: Gpio.OUTPUT}),
+    lb = new Gpio(19, {mode: Gpio.OUTPUT}),
+    rf = new Gpio(21, {mode: Gpio.OUTPUT}),
+    rb = new Gpio(20, {mode: Gpio.OUTPUT});
 
 var port = 80;
 
-var left = {
-  forward: gpio.export(26, {ready: function(){}}),
-  backward: gpio.export(19, {ready: function(){}})
-}
-
-var right = {
-  forward: gpio.export(21, {ready: function(){}}),
-  backward: gpio.export(20, {ready: function(){ forward(); }}) 
-}
-
 function forward(){
-  left.forward.set();
-  right.forward.set();
+  lf.digitalWrite(1);
+  rf.digitalWrite(1);
   setTimeout(function(){
     stop();
   }, 4000);
 }
 
 function stop(){
-  left.forward.reset();
-  left.backward.reset();
-  right.forward.reset();
-  right.backward.reset();
+  lf.digitalWrite(0);
+  lb.digitalWrite(0);
+  rf.digitalWrite(0);
+  rb.digitalWrite(0);
   setTimeout(function(){
     forward();
   }, 10000)

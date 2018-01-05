@@ -20,7 +20,7 @@
   "dependencies": {
     "epoll": "^1.0.2",
     "express": "*",
-    "gpio": "^0.2.7",
+    "pigpio": "*",
     "socket.io": "^2.0.4"
   }
 }
