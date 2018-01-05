@@ -1,0 +1,26 @@
+{
+  "name": "spybot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuCollet/spybot.git"
+  },
+  "keywords": [
+    "resin.io",
+    "webserver",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Jules²",
+  "dependencies": {
+    "epoll": "^1.0.2",
+    "express": "*",
+    "gpio": "^0.2.7",
+    "socket.io": "^2.0.4"
+  }
+}
