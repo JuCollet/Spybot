@@ -11,6 +11,13 @@ var Gpio = require('pigpio').Gpio,
 
 var port = 80;
 
+lf.digitalWrite(0);
+lb.digitalWrite(0);
+rf.digitalWrite(0);
+rb.digitalWrite(0);
+
+forward();
+
 function forward(){
   lf.digitalWrite(1);
   rf.digitalWrite(1);
