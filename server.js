@@ -5,7 +5,7 @@ var io = require('socket.io')(http);
 var path = require('path');
 var gpio = require('gpio');
 
-var port = 8080;
+var port = 80;
 
 var left = {
   forward: gpio.export(26, {ready: function(){}}),
