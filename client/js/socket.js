@@ -1,6 +1,7 @@
 var socketIo = (function(){
 
   var socket = io();
+  var isConnected = false;
 
   function sendRobotMove(pos){
     socket.emit('move', pos);
@@ -8,6 +9,8 @@ var socketIo = (function(){
 
   socket.on('connection', function(isConnected){
     var sl = domElements.statusLight;
+    isConnected = isConnected;
+
     if(isConnected) {
       sl.classList.add('status-light-connected'); 
     } else {
@@ -16,7 +19,8 @@ var socketIo = (function(){
   });
 
   return {
-    sendRobotMove
+    sendRobotMove,
+    isConnected
   }
 
 }());

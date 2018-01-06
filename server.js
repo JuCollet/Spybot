@@ -32,11 +32,6 @@ io.on('connection', function(socket){
 
   console.log(socket.id);
 
-  socket.on('init nickname', function(nickname){
-    socket.nickname = nickname;
-    io.emit('notification', `${socket.nickname} a rejoint le chat.`)
-  });
-
   socket.on('disconnect', function(){
     socketId = "";
     io.emit('connection', false);

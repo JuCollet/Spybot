@@ -30,6 +30,7 @@
   });
 
   function dragCursor(e){
+    if(!socketIo.isConnected) return;
     if(!e.x){
       e.x = e.touches["0"].clientX;
       e.y = e.touches["0"].clientY;
