@@ -10,7 +10,7 @@ var Gpio = require('pigpio').Gpio,
     rb = new Gpio(20, {mode: Gpio.OUTPUT});
 
 var port = 80;
-var socketId = "";
+var connectedUser = null;
 
 lf.digitalWrite(0);
 lb.digitalWrite(0);
@@ -25,20 +25,19 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
 
-  if(socketId === ""){
-    socketId = socket.id;
+  if(connectedUser === null){
+    connectedUser = socket.id;
     io.emit('isConnected', true);
-  };
-
-  console.log(socket.id);
+  } else {
+    io.emit('isConnected', false);
+  }
 
   socket.on('disconnect', function(){
-    socketId = "";
+    connectedUser = null;
     io.emit('isConnected', false);
   });
 
 });
-
 
 http.listen(port, function(){
   console.log('listening on port ' + port);
