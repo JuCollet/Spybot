@@ -10,6 +10,7 @@ var Gpio = require('pigpio').Gpio,
     rb = new Gpio(20, {mode: Gpio.OUTPUT});
 
 var port = 80;
+var socketId = "";
 
 lf.digitalWrite(0);
 lb.digitalWrite(0);
@@ -21,6 +22,24 @@ app.use(express.static(path.join(__dirname, '/client')));
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '/client/index.html'));
 });
+
+io.on('connection', function(socket){
+
+  if(socketId === ""){
+    socketId = socket.id;
+  };
+
+  console.log(socket.id);
+
+  socket.on('init nickname', function(nickname){
+    socket.nickname = nickname;
+    io.emit('notification', `${socket.nickname} a rejoint le chat.`)
+  });
+  socket.on('disconnect', function(){
+    io.emit('notification', `${socket.nickname} a quitté le chat.`);
+  });
+});
+
 
 http.listen(port, function(){
   console.log('listening on port ' + port);
