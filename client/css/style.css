@@ -11,7 +11,7 @@ html, body {
   font-family: Roboto;
 }
 
-@media(min-width: 768px){
+@media(min-width: 1024px){
   html, body {
     background-color: #1E1E1E;
   }
@@ -33,7 +33,7 @@ html, body {
   background-color: #2E2E2E;
 }
 
-@media(min-width: 768px){
+@media(min-width: 1024px){
   .wrapper {
     height: 80vh;
     width: calc(80vh * .6);
@@ -196,7 +196,7 @@ header .logo img {
   background: #333333;
 }
 
-@media(min-width: 768px){
+@media(min-width: 1024px){
   
   .screen-status {
     left: 2.5vh;
