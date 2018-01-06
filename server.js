@@ -27,6 +27,7 @@ io.on('connection', function(socket){
 
   if(socketId === ""){
     socketId = socket.id;
+    io.emit('connection', true);
   };
 
   console.log(socket.id);
@@ -35,9 +36,12 @@ io.on('connection', function(socket){
     socket.nickname = nickname;
     io.emit('notification', `${socket.nickname} a rejoint le chat.`)
   });
+
   socket.on('disconnect', function(){
-    io.emit('notification', `${socket.nickname} a quitté le chat.`);
+    socketId = "";
+    io.emit('connection', false);
   });
+
 });
 
 
