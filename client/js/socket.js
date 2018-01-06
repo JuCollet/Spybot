@@ -7,7 +7,7 @@ var socketIo = (function(){
     socket.emit('move', pos);
   }
 
-  socket.on('connection', function(isConnected){
+  socket.on('isConnected', function(isConnected){
     var sl = domElements.statusLight;
     isConnected = isConnected;
 

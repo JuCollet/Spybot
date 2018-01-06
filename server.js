@@ -27,14 +27,14 @@ io.on('connection', function(socket){
 
   if(socketId === ""){
     socketId = socket.id;
-    io.emit('connection', true);
+    io.emit('isConnected', true);
   };
 
   console.log(socket.id);
 
   socket.on('disconnect', function(){
     socketId = "";
-    io.emit('connection', false);
+    io.emit('isConnected', false);
   });
 
 });
