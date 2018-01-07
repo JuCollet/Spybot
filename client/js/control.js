@@ -38,7 +38,7 @@
     var result = limit(e.x, e.y);
     jc.style.left = result.x - jc.offsetWidth/2 + "px";
     jc.style.top = result.y - jc.offsetHeight/2 + "px";
-    robotMove(computeMove({x: result.x, y: result.y}));
+    computeMove({x: result.x, y: result.y});
     jc.style.position = "fixed";
   }
 
