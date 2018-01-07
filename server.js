@@ -53,15 +53,15 @@ io.on('connection', function(socket){
         return;
       }
       if(move.forward){
-        lf.digitalWrite(1);
-        lb.digitalWrite(0);
-        rf.digitalWrite(1);
-        rb.digitalWrite(0);
-      } else {
         lf.digitalWrite(0);
         lb.digitalWrite(1);
         rf.digitalWrite(0);
         rb.digitalWrite(1);
+      } else {
+        lf.digitalWrite(1);
+        lb.digitalWrite(0);
+        rf.digitalWrite(1);
+        rb.digitalWrite(0);
       }
       lSpeed.pwmWrite(move.left);
       rSpeed.pwmWrite(move.right);
