@@ -16,7 +16,7 @@ var socketIo = (function(){
     if(isConnected) {
       sl.classList.add('status-light-connected');
       st.innerHTML = "connected";
-      cz.style.background = "#35d665";
+      cz.style.background = "#FF2400";
     } else {
       sl.classList.remove('status-light-connected'); 
       st.innerHTML = "not connected";

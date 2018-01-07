@@ -81,8 +81,8 @@ header .logo {
 }
 
 .status-light-connected {
-  background-color: #35d665;
-  box-shadow: 0px 0px 10px #35d665;
+  background-color: #FF2400;
+  box-shadow: 0px 0px 10px #FF2400;
 }
 
 .screen {
@@ -118,8 +118,8 @@ header .logo {
   height: 1.2vh;
   width: 1.2vh;
   border-radius: 50%;
-  background-color: #35d665;
-  box-shadow: 0px 0px 10px #35d665;
+  background-color: #FF2400;
+  box-shadow: 0px 0px 10px #FF2400;
 }
 
 .screen-status-text {
