@@ -76,13 +76,13 @@ header .logo {
   width: 1.2vh;
   height: 1.2vh;
   border-radius: 50%;
-  background-color: #EB5757;
-  box-shadow: 0px 0px 5px #EB5757;
+  background-color: #FF2400;
+  box-shadow: 0px 0px 5px #FF2400;
 }
 
 .status-light-connected {
-  background-color: #FF2400;
-  box-shadow: 0px 0px 10px #FF2400;
+  background-color: #35d665;
+  box-shadow: 0px 0px 10px #35d665;
 }
 
 .screen {
@@ -142,7 +142,7 @@ header .logo {
   width: 40vh;
   min-width: 40vh;
   border-radius: 50%;
-  background: #EB5757;
+  background: #FF2400;
   box-shadow: inset 1px 2px 10px rgba(0, 0, 0, 0.4);
 }
 

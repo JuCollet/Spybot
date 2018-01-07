@@ -12,11 +12,11 @@ var socketIo = (function(){
     if(isConnected) {
       sl.classList.add('status-light-connected');
       st.innerHTML = "connected";
-      cz.style.background = "#FF2400";
+      cz.style.background = "#35d665";
     } else {
       sl.classList.remove('status-light-connected'); 
       st.innerHTML = "not connected";
-      cz.style.background = "#EB5757";
+      cz.style.background = "#FF2400";
     }
   });
 

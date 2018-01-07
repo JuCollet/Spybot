@@ -42,6 +42,7 @@ io.on('connection', function(socket){
     });
 
     socket.on('robotMove', function(move){
+      console.log(move)
       if(move.stop || (move.left === 0 && move.right === 0)) {
         lf.digitalWrite(0);
         lb.digitalWrite(0);
