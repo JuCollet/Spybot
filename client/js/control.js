@@ -43,7 +43,7 @@
   }
 
   function stopDragCursor(){
-    robotMove({forward: true, left: 0, right: 0, stop: true});
+    socket.emit('robotMove', {forward: true, left: 0, right: 0, stop: true});
     domElements.controlCursor.removeAttribute("style");
     document.onmouseup = null;
     document.ontouchend = null;
