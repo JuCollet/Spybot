@@ -50,11 +50,11 @@ header .logo {
   display: flex;
   align-items: center;
   height: 100%;
-  width: 100px;
-}
-
-header .logo img {
-  width: 100px;
+  width: 35%;
+  background-image: url("https://image.ibb.co/bVQO9w/SPYBOT.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 
 .header-status {
@@ -67,12 +67,12 @@ header .logo img {
 }
 
 .status-text {
-  margin-right: 10px;
   font-size: 2vh;
   color: #F2F2F2;
 }
 
 .status-light {
+  margin-left: 10px;
   width: 1.2vh;
   height: 1.2vh;
   border-radius: 50%;
@@ -142,7 +142,7 @@ header .logo img {
   width: 40vh;
   min-width: 40vh;
   border-radius: 50%;
-  background: radial-gradient(111.11px at 50% 50%, #9E310E 0%, #CC3D00 100%);
+  background: #EB5757;
   box-shadow: inset 1px 2px 10px rgba(0, 0, 0, 0.4);
 }
 

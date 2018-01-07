@@ -9,12 +9,18 @@ var socketIo = (function(){
 
   socket.on('isConnected', function(isConnected){
     var sl = domElements.statusLight;
+    var st = domElements.statusText;
+    var cz = domElements.controlZone;
     isConnected = isConnected;
 
     if(isConnected) {
-      sl.classList.add('status-light-connected'); 
+      sl.classList.add('status-light-connected');
+      st.innerHTML = "connected";
+      cz.style.background = "#35d665";
     } else {
       sl.classList.remove('status-light-connected'); 
+      st.innerHTML = "not connected";
+      cz.style.background = "#EB5757";
     }
   });
 
