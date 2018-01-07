@@ -41,44 +41,38 @@ html, body {
 }
 
 header {
-  display: flex;
-  align-items: center;
+  position: relative;
   height: 10%;
   width: 90%;
 }
 
 header .logo {
-  flex: 1 0 20%;
-  min-width: 75px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100px;
 }
 
 header .logo img {
-  width: auto;
-  height: auto;
-  max-width: 90%;
-}
-
-.header-line {
-  flex: 2 1;
-  height: 1%;
-  background-color: #F2F2F2;
+  width: 100px;
 }
 
 .header-status {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  flex: 1 1;
 }
 
 .status-text {
-  display: inline-block;
-  padding: 0 10% 0 15%;
+  margin-right: 10px;
   font-size: 2vh;
   color: #F2F2F2;
 }
 
 .status-light {
-  display: inline-block;
   width: 1.2vh;
   height: 1.2vh;
   border-radius: 50%;
