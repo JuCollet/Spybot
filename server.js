@@ -49,7 +49,7 @@ io.on('connection', function(socket){
         rf.digitalWrite(0);
         rb.digitalWrite(0);
         lSpeed.pwmWrite(0);
-        lSpeed.pwmWrite(0);
+        rSpeed.pwmWrite(0);
         return;
       }
       if(move.forward){
@@ -64,7 +64,7 @@ io.on('connection', function(socket){
         rb.digitalWrite(1);
       }
       lSpeed.pwmWrite(move.left);
-      lSpeed.pwmWrite(move.right);
+      rSpeed.pwmWrite(move.right);
     });
   }
 });
