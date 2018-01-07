@@ -27,15 +27,17 @@ io.on('connection', function(socket){
 
   if(connectedUser === null){
     connectedUser = socket.id;
-    io.emit('isConnected', true);
-  } else {
-    io.emit('isConnected', false);
+    io.to(connectedUser).emit('isConnected', true);
+    console.log(connectedUser + " is the driver");
   }
 
-  socket.on('disconnect', function(){
-    connectedUser = null;
-    io.emit('isConnected', false);
-  });
+  if(socket.id === connectedUser){
+    socket.on('disconnect', function(){
+      io.to(connectedUser).emit('isConnected', false);
+      connectedUser = null;
+      console.log('driver seat is free');
+    });
+  }
 
 });
 
