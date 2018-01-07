@@ -43,7 +43,8 @@
   }
 
   function stopDragCursor(){
-    socket.emit('robotMove', {forward: true, left: 0, right: 0, stop: true});
+    if(!socketIo.socket) return;
+    socketIo.socket.emit('robotMove', {forward: true, left: 0, right: 0, stop: true});
     domElements.controlCursor.removeAttribute("style");
     document.onmouseup = null;
     document.ontouchend = null;
@@ -75,6 +76,7 @@
   }
 
   function computeMove(pos){
+    if(!socketIo.socket) return;
     var move = {};
     var power = Math.round(((controlZone.center[1] - pos.y) / controlZone.radius) * 255);
     var direction = controlZone.center[0] - pos.x;
@@ -87,7 +89,7 @@
       move.right = Math.abs(power);
       move.left = Math.round(Math.abs((1 - turn) * power));
     }
-    return socket.emit('robotMove', move);
+    return socketIo.socket.emit('robotMove', move);
   }
 
 }());
